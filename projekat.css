@@ -1,0 +1,43 @@
+#logo {
+	
+	margin-left: 200px;
+	margin-right: 200px;
+	height:50px;
+	float:left;
+	
+}
+
+header {
+	
+	height:50px;
+	border-bottom-style: solid;
+	border-bottom-color: orange;
+}
+
+ul {
+	
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	
+	
+	
+}
+
+li{
+	padding: 10px;
+	float:left;
+	padding-top:10px;
+	color:blue;
+}
+
+
+
+li a{
+	
+	overflow: auto;
+	color: purple;
+		
+	text-decoration: none;
+	
+}
