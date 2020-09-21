@@ -70,5 +70,15 @@ li a{
 }
 	
 	
+footer {
+	text-align:center;
+	background-color: #f2a463;
+	height: 50px;
+}
+
+p.footer {
+	padding-left: 10px;
+	display: inline;
+	color: purple;
 }
 
