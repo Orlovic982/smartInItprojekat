@@ -11,6 +11,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+.slike {
+  width:200px;
+  height:200px;
+
+
+}
+
+
+</style>
+
+
 </head>
 <body>
 
@@ -18,7 +31,7 @@
     
      <div class="row">
         <div class="col">
-            <img id="logo" src="resursi/logo_1.jpg" style="width: 40px; margin-left: 100px;">
+            <img id="logo" src="resursi/logo_1.jpg" style="width: 70px; margin-left: 300px;">
         </div>
          <div class="col">
            
@@ -50,5 +63,76 @@
     </div>
     </div>
 </header>
-</br>
+
+
+
+
+<div class="centralPart" >
+  <article class="container1"  >
+    <h6><b>UPLOAD PHOTO AND WIN PRIZE</b><h6>
+    <p> Upload your photo from most interesting destinations and get a chance to win a prize</p>
+    
+  </article>
+</div>
+
+<div class="container" style="border: 1px solid grey; height: 500px;" id="slike">
+  <img class="slike" src="resursi/rome.jpg" alt="Rome">
+  <img class="slike"src="resursi/paris.jpg" alt="Paris">
+  <img class="slike"src="resursi/athen.jpg" alt="Athen">
+  <img class="slike"src="resursi/venice.jpg">
+  <img class="slike" src="resursi/thailand.jpg">
+
+</div>
+
+<button id="File1" onchange="ucitajSliku()" accept="image/*" style="float: right;;"><img src="resursi/upload_photo.png" style="width:100px; height:100px"/></button>
+
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer align="center">
+	<p class="footer" style="color:black">SmartInIt</p>
+	<p class="footer"><i>Home</i></p>
+	<p class="footer"><i>Privacy policy</i></p>
+	<p class="footer"><i>Contact Suport</i></p>
+	
+</footer>
+
+
+
+<script type="text/javascript">
+function ucitajSliku(){
+  var fajlElem=document.getElementById("File1");
+  if (fajlElem.files.lenght !=0 && fajlElem.files[0].type.match(/image.*/))
+  {
+    var reader= new FileReader();
+    reader.readAsDataURL(fajlElem.files[0]);
+    reader.onload=function (e){
+
+      var imgElem=document.getElementById("slike");
+      imgElem.src=e.target.result;
+    }
+
+
+
+
+  }
+
+
+
+
+
+
+}
+
+
+
+
+</script>
+
+
 </body>
