@@ -81,10 +81,10 @@
   <img class="slike"src="resursi/athen.jpg" alt="Athen">
   <img class="slike"src="resursi/venice.jpg">
   <img class="slike" src="resursi/thailand.jpg">
-
+  <img id="slika1" width="100"/>
 </div>
 
-<button id="File1" onchange="ucitajSliku()" accept="image/*" style="float: right;;"><img src="resursi/upload_photo.png" style="width:100px; height:100px"/></button>
+<input id="File1" type="file" onchange="ucitajSliku()" accept="image/*">
 
 
 <br>
@@ -94,7 +94,7 @@
 <br>
 <br>
 <br>
-<footer align="center">
+<footer>
 	<p class="footer" style="color:black">SmartInIt</p>
 	<p class="footer"><i>Home</i></p>
 	<p class="footer"><i>Privacy policy</i></p>
@@ -105,29 +105,28 @@
 
 
 <script type="text/javascript">
+
 function ucitajSliku(){
-  var fajlElem=document.getElementById("File1");
-  if (fajlElem.files.lenght !=0 && fajlElem.files[0].type.match(/image.*/))
-  {
-    var reader= new FileReader();
-    reader.readAsDataURL(fajlElem.files[0]);
-    reader.onload=function (e){
-
-      var imgElem=document.getElementById("slike");
-      imgElem.src=e.target.result;
-    }
-
-
-
-
-  }
-
-
-
+			var binElement = document.getElementById("File1");			
+			if(binElement.files.length !=0 && binElement.files[0].type.match(/image.*/)){				
+				var reader = new FileReader();
+				reader.readAsDataURL(binElement.files[0]);
+				reader.onload = function(e){
+					var imgElem = document.getElementById("slika1");
+					imgElem.src = e.target.result;
+				};
+				reader.onerror = function(){
+					alert("Greska pri ucitavanju slike!");
+				};
+			}
+			else{
+				alert("Odaberite sliku!");
+			}
+		}
 
 
 
-}
+
 
 
 
